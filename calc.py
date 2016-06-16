@@ -22,10 +22,6 @@ def subtract():
     print (number_a-number_b)
 
 
-
-
-
-
 actions = {'add': add, 'multiply': multiply,'divide':divide,'subtract': subtract}
 
 actions[oper]()
