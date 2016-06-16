@@ -2,7 +2,7 @@ print('Please input a')
 number_a = int(input())
 print('Please input b')
 number_b = int(input())
-print('Please input operand')
+print('Please input operand in  (add,muliply,divide,subtract)')
 oper=input()
 
 def add():
