@@ -1,16 +1,7 @@
-print('Please input a')
-number_a = int(input())
-print('Please input b')
-number_b = int(input())
-print('Please input operand in  (add,muliply,divide,subtract)')
-oper=input()
-
 def add():
     print(number_a+number_b)
-
-def multy():
+def multiply():
     print(number_a*number_b)
-
 def divide():
     if (number_b== 0):
         print('division by zero')
@@ -20,6 +11,13 @@ def multiply():
     print(number_a*number_b)
 def subtract():
     print (number_a-number_b)
+
+    print('Please input a')
+    number_a = int(input())
+    print('Please input b')
+    number_b = int(input())
+    print('Please input operand in  (add,muliply,divide,subtract)')
+    oper=input()
 
 
 actions = {'add': add, 'multiply': multiply,'divide':divide,'subtract': subtract}
