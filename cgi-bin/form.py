@@ -1,9 +1,29 @@
 #!/usr/bin/env python3
 import cgi
 
+
+def add(x,y):
+    return x+y
+def multiply():
+     return x*y
+def divide(x,y):
+    if (number_b== 0):
+        print('division by zero')
+        return
+    return a/b
+def multiply(x,y):
+    return x*y
+def subtract(x,y):
+    return x-y
+
 form = cgi.FieldStorage()
-text1 = form.getfirst("number_a", "не задано")
-text2 = form.getfirst("number_b", "не задано")
+number_a = form.getfirst("number_a", "не задано")
+number_b= form.getfirst("number_b", "не задано")
+oper = form.getfirst("action", "не задано")
+
+actions = {'add': add, 'multiply': multiply,'divide':divide,'subtract': subtract}
+result=actions[oper](number_a,number_b)
+
 
 print("Content-type: text/html\n")
 print("""<!DOCTYPE HTML>
@@ -15,8 +35,11 @@ print("""<!DOCTYPE HTML>
 <body>""")
 
 print("<h1>Обработка данных форм!</h1>")
-print("<p> number_a: {}</p>".format(number_a))
-print("<p> number_b: {}</p>".format(number_b))
-
+print("<p> x: {}</p>".format(number_a))
+print("<p> action: {}</p>".format(oper))
+print("<p> y: {}</p>".format(number_b))
+print("<p> result: {}</p>".format(result))
+print("<p> <a href="/"><button>again computer
+                  </button> </a></p>")
 print("""</body>
 </html>""")
