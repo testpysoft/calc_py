@@ -17,9 +17,9 @@ def subtract(x,y):
     return x-y
 
 form = cgi.FieldStorage()
-number_a = form.getfirst("number_a", "не задано")
-number_b= form.getfirst("number_b", "не задано")
-oper = form.getfirst("action", "не задано")
+number_a = form.getfirst("number_a", "100")
+number_b= form.getfirst("number_b", "100")
+oper = form.getfirst("action", "add")
 
 actions = {'add': add, 'multiply': multiply,'divide':divide,'subtract': subtract}
 result=actions[oper](number_a,number_b)
@@ -30,11 +30,11 @@ print("""<!DOCTYPE HTML>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Обработка данных форм</title>
+  <title>Form calc</title>
 </head>
 <body>""")
 
-print("<h1>Обработка данных форм!</h1>")
+print("<h1>We all done!</h1>")
 print("<p> x: {}</p>".format(number_a))
 print("<p> action: {}</p>".format(oper))
 print("<p> y: {}</p>".format(number_b))
