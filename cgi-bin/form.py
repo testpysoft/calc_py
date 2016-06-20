@@ -39,7 +39,6 @@ print("<p> x: {}</p>".format(number_a))
 print("<p> action: {}</p>".format(oper))
 print("<p> y: {}</p>".format(number_b))
 print("<p> result: {}</p>".format(result))
-print("<p> <a href="/"><button>again computer
-                  </button> </a></p>")
+print("""<p> <a href="/"><button>again computer    </button> </a></p>""")
 print("""</body>
 </html>""")
