@@ -1,8 +1,31 @@
 #!/usr/bin/env python3
 import cgi
+import functools
+import sys
 
+
+def trace(func=None, *, handle=sys.stdout):
+    #  зі скобкам
+    if func is None:
+        return lambda func: trace(func, handle=handle)
+
+    # без скобок
+    @functools.wraps(func)
+    def inner(*args, **kwargs):
+        print(func.__name, args, kwargs)
+        return   func(*args, **kwargs)
+    return inner
+
+
+
+
+
+
+
+@trace
 def add(x,y):
     return x+y
+
 def divide(x,y):
     if (y == 0):
         print('division by zero')
